@@ -15,7 +15,7 @@ function App() {
       <Container>
         <Row>
           <Col></Col>
-          <Col>
+          <Col xs={8}>
             <InputTask />
           </Col>
           <Col></Col>
