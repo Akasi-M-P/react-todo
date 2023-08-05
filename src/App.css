@@ -1,3 +1,11 @@
 .task_Cards {
-    margin-top: 20px;
+    margin-top: 20px auto;
+}
+
+.main_Container {
+    width: 90%;
+}
+
+.card_Row {
+    margin: 15px auto;
 }

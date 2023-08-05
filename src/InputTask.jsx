@@ -16,11 +16,20 @@ function InputTask() {
           aria-describedby="inputGroup-sizing-default"
         />
       </InputGroup>
-     
-            <input type="date" className="form-control"></input>
-            <br />
-            <input type="time" className="form-control" placeholder="time"></input>
-        
+      <br />
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+          Select Date
+        </InputGroup.Text>
+        <input type="date" className="form-control"></input>
+      </InputGroup>
+      <br />
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+          Select Time
+        </InputGroup.Text>
+        <input type="time" className="form-control"></input>
+      </InputGroup>
     </>
   );
 }

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 function TaskCard() {
   return (
     <div className="task_Cards">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="card_Row">
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -18,7 +18,7 @@ function TaskCard() {
           <Card.Link>
             <Button variant="outline-warning">Warning</Button>
           </Card.Link>
-          <Card.Link >
+          <Card.Link>
             <Button variant="outline-danger">Danger</Button>
           </Card.Link>
         </Card.Body>
