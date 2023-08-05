@@ -16,10 +16,10 @@ function TaskCard() {
             bulk of the card's content.
           </Card.Text>
           <Card.Link>
-            <Button variant="outline-warning">Warning</Button>
+            <Button variant="outline-warning">Edit</Button>
           </Card.Link>
           <Card.Link>
-            <Button variant="outline-danger">Danger</Button>
+            <Button variant="outline-danger">Delete</Button>
           </Card.Link>
         </Card.Body>
       </Card>

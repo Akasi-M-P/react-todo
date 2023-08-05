@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@400;500;700&family=Passion+One&family=Raleway:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100&family=Signika+Negative:wght@400;500;600;700&family=Slabo+27px&family=Ysabeau+Infant:wght@100;300;400;500;700;900&family=Ysabeau+Office:wght@1;100;300;400;500;600;700;900&family=Ysabeau+SC:wght@100;300;500;600;700;800;900;1000&display=swap');
+
+
+
 .task_Cards {
     margin-top: 20px auto;
 }
@@ -8,4 +12,12 @@
 
 .card_Row {
     margin: 15px auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.input {
+    font-family: "Ysabeau Office";
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }

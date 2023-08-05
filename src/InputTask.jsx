@@ -7,7 +7,7 @@ function InputTask() {
   return (
     <>
       <br />
-      <InputGroup className="mb-3">
+      <InputGroup className="input mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
           Enter Task
         </InputGroup.Text>
@@ -17,17 +17,13 @@ function InputTask() {
         />
       </InputGroup>
       <br />
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default">
-          Select Date
-        </InputGroup.Text>
+      <InputGroup className="input mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">Date</InputGroup.Text>
         <input type="date" className="form-control"></input>
       </InputGroup>
       <br />
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default">
-          Select Time
-        </InputGroup.Text>
+      <InputGroup className="input mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">Time</InputGroup.Text>
         <input type="time" className="form-control"></input>
       </InputGroup>
     </>
