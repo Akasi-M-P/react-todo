@@ -4,14 +4,20 @@
 
 .task_Cards {
     margin-top: 20px auto;
+        background-color: #116D6E;
+        border-radius: 8px;
 }
 
 .main_Container {
     width: 90%;
 }
 
+
+
 .card_Row {
-     font-family: "Ysabeau Office";
+
+    font-family: "Ysabeau Office";
+    font-weight: bold;
     margin: 15px auto;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
@@ -20,5 +26,7 @@
     font-family: "Ysabeau Office";
     font-size: 18px;
     border-radius: 5px;
+    border-left: 2px solid #116D6E;
+    border-right: 2px solid #116D6E;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
