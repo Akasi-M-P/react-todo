@@ -5,7 +5,8 @@
 .task_Cards {
     margin-top: 20px auto;
         background-color: #116D6E;
-        border-radius: 8px;
+        border-radius: 20px;
+        width: 100%;
 }
 
 .main_Container {
