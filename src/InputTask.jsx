@@ -44,14 +44,14 @@ function InputTask() {
                 onChange={(e) => setValue(e.target.value)}
               />
             </InputGroup>
-            <br />
+
             <InputGroup className="input mb-3">
               <InputGroup.Text id="inputGroup-sizing-default">
                 Date
               </InputGroup.Text>
               <input type="date" className="form-control"></input>
             </InputGroup>
-            <br />
+
             <InputGroup className="input mb-3">
               <InputGroup.Text id="inputGroup-sizing-default">
                 Time
