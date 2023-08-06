@@ -67,7 +67,7 @@ function InputTask() {
         </Col>
         <Col></Col>
       </Row>
-      <Row className="flex">
+      <Row>
         {tasks.map((task) => (
           <Col key={task.id} lg={3}>
             <Card style={{ width: "18rem" }} className="card_Row">
