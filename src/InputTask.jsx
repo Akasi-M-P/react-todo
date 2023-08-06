@@ -69,8 +69,8 @@ function InputTask() {
       </Row>
       <Row>
         {tasks.map((task) => (
-          <Col key={task.id} lg={3} className="mx-auto">
-            <Card style={{ width: "18rem" }} className="card_Row">
+          <Col key={task.id} lg={3}>
+            <Card style={{ width: "18rem" }} className="mx-auto card_Row">
               <Card.Body>
                 <Card.Text>{task.content}</Card.Text>
                 <Card.Subtitle className="mb-2 text-muted">

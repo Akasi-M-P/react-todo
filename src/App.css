@@ -3,7 +3,7 @@
 
 
 .task_Cards {
-    margin-top: 20px auto;
+        margin-top: 20px auto;
         background-color: #116D6E;
         border-radius: 20px;
         width: 100%;
@@ -14,7 +14,7 @@
 }
 
 .input_Container {
-    background-color: #809fa0;
+    background-color: #579698;
     padding: 10px;
     border-radius: 10px;
     width: auto;
@@ -25,7 +25,7 @@
 .card_Row {
     font-family: "Ysabeau Office";
     font-weight: bold;
-    margin: 15px auto;
+    margin: 15px 15px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
