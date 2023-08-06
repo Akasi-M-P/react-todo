@@ -69,7 +69,7 @@ function InputTask() {
       </Row>
       <Row>
         {tasks.map((task) => (
-          <Col key={task.id} lg={3}>
+          <Col key={task.id} lg={3} className="mx-auto">
             <Card style={{ width: "18rem" }} className="card_Row">
               <Card.Body>
                 <Card.Text>{task.content}</Card.Text>
