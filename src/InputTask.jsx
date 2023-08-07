@@ -29,7 +29,7 @@ function InputTask() {
       };
 
       if (editingTask !== null) {
-        const updatedTasks = task.map((task) =>
+        const updatedTasks = tasks.map((task) =>
           task.id === editingTask.id ? { ...newTask, id: task.id } : task
         );
         setTasks(updatedTasks);
@@ -37,11 +37,11 @@ function InputTask() {
       } else {
         setTasks([...tasks, newTask]);
       }
-
-      setValue("");
-      setDate("");
-      setTime("");
     }
+
+    setValue("");
+    setDate("");
+    setTime("");
   };
 
   const handleDelete = (e) => {
@@ -56,6 +56,7 @@ function InputTask() {
     setValue(task.content);
     setDate(task.date);
     setTime(task.time);
+    setEditingTask(task);
   };
 
   return (
