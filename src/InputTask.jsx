@@ -7,10 +7,14 @@ import Stack from "react-bootstrap/Stack";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 
 function InputTask() {
   const [tasks, setTasks] = useState([]);
   const [value, setValue] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [lgShow, setLgShow] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +23,30 @@ function InputTask() {
       const newTask = {
         id: Date.now(),
         content: value,
+        date: date,
+        time: time,
       };
       setTasks([...tasks, newTask]);
 
       setValue("");
+      setDate("");
+      setTime("");
     }
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const deleteTask = parseInt(e.target.value);
+    const newTasks = tasks.filter((task) => task.id !== deleteTask);
+    setTasks(newTasks);
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault()
+    setLgShow(true);
+    setValue({...tasks, 
+    [setValue]: e.target.value
+    })
   };
 
   return (
@@ -49,21 +72,96 @@ function InputTask() {
               <InputGroup.Text id="inputGroup-sizing-default">
                 Date
               </InputGroup.Text>
-              <input type="date" className="form-control"></input>
+              <input
+                type="date"
+                className="form-control"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              ></input>
             </InputGroup>
 
             <InputGroup className="input mb-3">
               <InputGroup.Text id="inputGroup-sizing-default">
                 Time
               </InputGroup.Text>
-              <input type="time" className="form-control"></input>
+              <input
+                type="time"
+                className="form-control"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              ></input>
             </InputGroup>
             <Stack>
-              <Button type="submit" className="submit_btn" variant="success">
+              <Button
+                type="submit"
+                className="submit_btn"
+                variant="outline-light"
+              >
                 Add
               </Button>{" "}
             </Stack>
           </form>
+          {/* MODAL */}
+          <Modal
+            size="lg"
+            show={lgShow}
+            onHide={() => setLgShow(false)}
+            aria-labelledby="example-modal-sizes-title-lg"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="example-modal-sizes-title-lg">
+                Large Modal
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <form onSubmit={handleSubmit}>
+                <InputGroup className="input mb-3">
+                  <InputGroup.Text id="inputGroup-sizing-default">
+                    Task
+                  </InputGroup.Text>
+                  <Form.Control
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                  />
+                </InputGroup>
+
+                <InputGroup className="input mb-3">
+                  <InputGroup.Text id="inputGroup-sizing-default">
+                    Date
+                  </InputGroup.Text>
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  ></input>
+                </InputGroup>
+
+                <InputGroup className="input mb-3">
+                  <InputGroup.Text id="inputGroup-sizing-default">
+                    Time
+                  </InputGroup.Text>
+                  <input
+                    type="time"
+                    className="form-control"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                  ></input>
+                </InputGroup>
+                <Stack>
+                  <Button
+                    type="submit"
+                    className="submit_btn"
+                    variant="success"
+                  >
+                    Update
+                  </Button>{" "}
+                </Stack>
+              </form>
+            </Modal.Body>
+          </Modal>
         </Col>
         <Col></Col>
       </Row>
@@ -74,16 +172,24 @@ function InputTask() {
               <Card.Body>
                 <Card.Text>{task.content}</Card.Text>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
+                  {task.date}
                 </Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
+                  {task.time}
                 </Card.Subtitle>
                 <Card.Link>
-                  <Button variant="outline-warning">Edit</Button>
+                  <Button variant="outline-warning" onClick={handleEdit}>
+                    Edit
+                  </Button>
                 </Card.Link>
                 <Card.Link>
-                  <Button variant="outline-danger">Delete</Button>
+                  <Button
+                    variant="outline-danger"
+                    value={task.id}
+                    onClick={handleDelete}
+                  >
+                    Delete
+                  </Button>
                 </Card.Link>
               </Card.Body>
             </Card>
