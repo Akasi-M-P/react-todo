@@ -15,6 +15,7 @@ function InputTask() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [lgShow, setLgShow] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +27,16 @@ function InputTask() {
         date: date,
         time: time,
       };
-      setTasks([...tasks, newTask]);
+
+      if (editingTask !== null) {
+        const updatedTasks = task.map((task) =>
+          task.id === editingTask.id ? { ...newTask, id: task.id } : task
+        );
+        setTasks(updatedTasks);
+        setEditingTask(null);
+      } else {
+        setTasks([...tasks, newTask]);
+      }
 
       setValue("");
       setDate("");
@@ -41,12 +51,11 @@ function InputTask() {
     setTasks(newTasks);
   };
 
-  const handleEdit = (e) => {
-    e.preventDefault()
+  const handleEdit = (task) => {
     setLgShow(true);
-    setValue({...tasks, 
-    [setValue]: e.target.value
-    })
+    setValue(task.content);
+    setDate(task.date);
+    setTime(task.time);
   };
 
   return (
@@ -155,6 +164,7 @@ function InputTask() {
                     type="submit"
                     className="submit_btn"
                     variant="success"
+                    onClick={() => setLgShow(false)}
                   >
                     Update
                   </Button>{" "}
@@ -178,7 +188,10 @@ function InputTask() {
                   {task.time}
                 </Card.Subtitle>
                 <Card.Link>
-                  <Button variant="outline-warning" onClick={handleEdit}>
+                  <Button
+                    variant="outline-warning"
+                    onClick={() => handleEdit(task)}
+                  >
                     Edit
                   </Button>
                 </Card.Link>
